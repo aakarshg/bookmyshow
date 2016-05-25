@@ -1,4 +1,5 @@
-import urllib2, sys
+#!/usr/bin/env python2.7
+import urllib2
 from bs4 import BeautifulSoup
 import re
 import smtplib
@@ -7,10 +8,15 @@ import time
 site= "https://in.bookmyshow.com/buytickets/x-men-apocalypse-3d-hyderabad/movie-hyd-ET00029820-MT/" #Replace this your movieandcity url
 date="20160525" #replace the date with the date for which you'd like to book tickets! Format: YYYYMMDD
 site=site+date
-hdr = {'User-Agent': 'Mozilla/5.0'}
-venue ='CPCL' #this can be found by inspecting the element data-id for the venue where you would like to watch 
+hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+       'Accept-Encoding': 'none',
+       'Accept-Language': 'en-US,en;q=0.8',
+       'Connection': 'keep-alive'}
+venue ='CPCL' #this can be found by inspecting the element data-id for the venue where you would like to watch
 show='11:30 AM' #just replace it with your prefered show timing
-delay=300 #timegap in seconds between 2 script runs 
+delay=300 #timegap in seconds between 2 script runs
 
 TO = 'throwaway.aakarsh@gmail.com' #mail id for which you want to get alerted
 GMAIL_USER = 'throwaway.aakarsh@gmail.com'
@@ -49,5 +55,5 @@ if len(result)>0:
     send_email()
 else :
     print "Not available yet"
-time.sleep(delay) 
+time.sleep(delay)
 
