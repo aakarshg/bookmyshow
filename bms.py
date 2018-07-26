@@ -19,8 +19,11 @@ show='11:30 AM' #just replace it with your prefered show timing
 delay=300 #timegap in seconds between 2 script runs
 
 TO = 'throwaway.aakarsh@gmail.com' #mail id for which you want to get alerted
-GMAIL_USER = 'throwaway.aakarsh@gmail.com'
-GMAIL_PASS = 'throw.@@karsh'
+# Please add your username and password here, and make sure you 
+# toggle allow less secure apps to on 
+# https://myaccount.google.com/lesssecureapps?pli=1 
+GMAIL_USER = 'sample_username@gmail.com'
+GMAIL_PASS = 'sample_password'
 SUBJECT = 'Tickets are now available, Book fast'
 TEXT = 'The tickets are now available for the ' + show + ' show at the venue ' +venue
 
